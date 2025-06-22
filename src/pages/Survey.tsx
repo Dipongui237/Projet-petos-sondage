@@ -71,7 +71,7 @@ export default function Survey() {
         <header className="bg-white shadow">
           <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
             <h1 className="text-2xl font-bold text-gray-900">
-              Sondage sur les attentes en matière d'assurance
+               Dirigeant, quel budget pour votre protection sociale et votre retraite.
             </h1>
             <button onClick={handleLogout} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-yellow-900 hover:bg-yellow-900">
               <LogOutIcon className="mr-2 h-4 w-4" />
@@ -103,7 +103,7 @@ export default function Survey() {
       <header className="bg-white shadow">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-gray-900">
-            Sondage sur les attentes en matière d'assurance
+             Dirigeant, quel budget pour votre protection sociale et votre retraite.
           </h1>
           <div className="flex items-center">
             <span className="mr-4 text-sm text-gray-600">

@@ -41,38 +41,87 @@ const SurveyContext = createContext<SurveyContextType | undefined>(undefined);
 // Initial survey data
 const initialSections: Section[] = [{
   id: 1,
-  title: "Informations sur l'assurance actuelle",
+  title: "Informations générales",
   description: "Veuillez nous indiquer votre situation actuelle concernant l'assurance",
   questions: [{
     id: 1,
-    text: 'Avez-vous actuellement une assurance ?',
-    options: ['Oui', 'Non'],
+    text: '1- Quelle est votre profession ?',
+    options: ['Médecin', 'Kinésithérapeute', 'Sage-femme', 'Professionnel juridique (précisez : avocat, notaire, autre)'],
     allowMultiple: false,
-    hasOther: false
+    hasOther: true
   }, {
     id: 2,
-    text: "Quels types d'assurance possédez-vous actuellement ?",
-    options: ['Santé', 'Habitation', 'Automobile', 'Vie', 'Responsabilité civile'],
-    allowMultiple: true,
+    text: "2- Depuis combien de temps exercez-vous cette profession ?",
+    options: ['1ans', '5ans', '10ans'],
+    allowMultiple: false,
+    hasOther: true
+  }, {
+    id: 3,
+    text: "3-Travaillez-vous en libéral exclusivement ou en mixte (libéral et salarié) ?",
+    options: ['libéral', 'mixte'],
+    allowMultiple: false,
     hasOther: true
   }]
 }, {
   id: 2,
-  title: 'Attentes et besoins',
-  description: 'Parlez-nous de vos attentes concernant votre future assurance',
+  title: 'Prévisions budgétaires',
+  description: '1- Parlez-moi de votre prévoyance individuelle, Mutuelle santé et de votre Retraite ',
   questions: [{
-    id: 3,
-    text: 'Quelles sont vos priorités concernant une assurance ?',
-    options: ['Prix abordable', 'Couverture complète', 'Service client réactif', 'Processus de réclamation simple'],
-    allowMultiple: true,
-    hasOther: true
-  }, {
     id: 4,
-    text: 'Quel budget mensuel envisagez-vous pour votre assurance ?',
+    text: '2- Disposez-vous actuellement d’un contrat de prévoyance individuelle ?',
+    options: ['Oui','Non' ],
+    allowMultiple: false,
+    hasOther: false
+  }, {
+    id: 5,
+    text: '3- Quel budget mensuel prévoyez-vous ou affectez-vous actuellement à votre contrat de prévoyance individuelle ?',
+    options: ['Moins de 50€', 'Entre 50€ et 100€', 'Entre 100€ et 200€', 'Plus de 200€'],
+    allowMultiple: false,
+    hasOther: false
+  }, {
+    id: 6,
+    text: '4- Disposez-vous actuellement d’une mutuelle santé ?',
+    options: ['Oui', 'Non', ],
+    allowMultiple: false,
+    hasOther: false
+  }, {
+    id: 7,
+    text: '5-Quel budget mensuel prévoyez-vous ou affectez-vous actuellement à votre contrat de mutuelle santé ?',
+    options: ['Moins de 50€', 'Entre 50€ et 100€', 'Entre 100€ et 200€', 'Plus de 200€'],
+    allowMultiple: false,
+    hasOther: false
+  }, {
+    id: 8,
+    text: '6- Disposez-vous actuellement d’un contrat retraite spécifique, en plus des cotisations obligatoires ?',
+    options: ['Oui', 'Non'],
+    allowMultiple: false,
+    hasOther: false
+  }, {
+    id: 9,
+    text: '. 7-Quel budget mensuel prévoyez-vous ou affectez-vous actuellement à votre contrat retraite ?',
     options: ['Moins de 50€', 'Entre 50€ et 100€', 'Entre 100€ et 200€', 'Plus de 200€'],
     allowMultiple: false,
     hasOther: false
   }]
+  
+}, {
+  id: 3,
+  title: 'Aperçu des priorités',
+  description: 'Parlez-moi de votre prévoyance individuelle, Mutuelle santé et de votre Retraite ',
+  questions: [{
+    id: 10,
+    text: '1- Parmi les trois catégories (prévoyance, mutuelle santé, retraite), laquelle est votre priorité principale ?',
+    options: ['Prévoyance individuelle', 'Mutuelle santé', 'Retraite',],
+    allowMultiple: true,
+    hasOther: false
+  }, {
+    id: 11,
+    text: '2- Souhaitez-vous des informations supplémentaires ou un accompagnement pour optimiser votre protection sociale et votre retraite ?',
+    options: ['Oui', 'Non', ],
+    allowMultiple: false,
+    hasOther: true
+  }]
+  
 }];
 export function SurveyProvider({
   children
