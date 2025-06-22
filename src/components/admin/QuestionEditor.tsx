@@ -288,7 +288,7 @@ export default function QuestionEditor() {
                       <button onClick={e => {
                 e.stopPropagation();
                 handleDeleteSection(section.id);
-              }} className="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-200">
+              }} className="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-red-700 bg-yellow-900-100 hover:bg-yellow-900-200">
                         <TrashIcon className="mr-1 h-4 w-4" />
                         Supprimer la section
                       </button>

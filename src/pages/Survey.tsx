@@ -73,7 +73,7 @@ export default function Survey() {
             <h1 className="text-2xl font-bold text-gray-900">
               Sondage sur les attentes en matière d'assurance
             </h1>
-            <button onClick={handleLogout} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700">
+            <button onClick={handleLogout} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-yellow-900 hover:bg-yellow-900">
               <LogOutIcon className="mr-2 h-4 w-4" />
               Déconnexion
             </button>
@@ -109,7 +109,7 @@ export default function Survey() {
             <span className="mr-4 text-sm text-gray-600">
               Bonjour, {currentUser.name}
             </span>
-            <button onClick={handleLogout} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700">
+            <button onClick={handleLogout} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-yellow-900 hover:bg-yellow-900">
               <LogOutIcon className="mr-2 h-4 w-4" />
               Déconnexion
             </button>

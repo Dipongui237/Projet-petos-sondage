@@ -49,8 +49,8 @@ export default function Login() {
       navigate('/survey');
     }
   };
-  return <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className=" w-full space-y-8">
+  return <div className="min-h-screen  flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[500px] w-full space-y-8">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold  text-orange-500">
             {isAdminLogin ? 'Connexion Administrateur' : 'Bienvenue sur le Questionnaire'}
@@ -60,7 +60,7 @@ export default function Login() {
           </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          {error && <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-4">
+          {error && <div className="bg-yellow-900-50 border-l-4 border-yellow-900 p-4 mb-4">
               <p className="text-red-700">{error}</p>
             </div>}
           <div className="rounded-md shadow-sm -space-y-px">
