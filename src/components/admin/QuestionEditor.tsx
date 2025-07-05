@@ -93,8 +93,8 @@ export default function QuestionEditor() {
       hasOther
     } = editingQuestionData;
     // Filter out empty options
-    const filteredOptions = options.filter(opt => opt.trim() !== '');
-    if (filteredOptions.length === 0) {
+    const filtegreenOptions = options.filter(opt => opt.trim() !== '');
+    if (filtegreenOptions.length === 0) {
       alert('Veuillez ajouter au moins une option de réponse');
       return;
     }
@@ -102,7 +102,7 @@ export default function QuestionEditor() {
       // Add new question
       addQuestion(sectionId, {
         text,
-        options: filteredOptions,
+        options: filtegreenOptions,
         allowMultiple,
         hasOther
       });
@@ -111,7 +111,7 @@ export default function QuestionEditor() {
       updateQuestion(sectionId, {
         id: questionId,
         text,
-        options: filteredOptions,
+        options: filtegreenOptions,
         allowMultiple,
         hasOther
       });
@@ -159,7 +159,7 @@ export default function QuestionEditor() {
             Gérez les sections et les questions du sondage.
           </p>
         </div>
-        <button onClick={handleAddSection} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-orange-500 hover:bg-yellow-700">
+        <button onClick={handleAddSection} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-700 hover:bg-blue-700">
           <PlusIcon className="mr-2 h-4 w-4" />
           Ajouter une section
         </button>
@@ -177,20 +177,20 @@ export default function QuestionEditor() {
                   <label htmlFor="section-title" className="block text-sm font-medium text-gray-700">
                     Titre
                   </label>
-                  <input type="text" id="section-title" value={newSectionTitle} onChange={e => setNewSectionTitle(e.target.value)} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" />
+                  <input type="text" id="section-title" value={newSectionTitle} onChange={e => setNewSectionTitle(e.target.value)} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-700 focus:ring-blue-700 sm:text-sm" />
                 </div>
                 <div className="mb-4">
                   <label htmlFor="section-description" className="block text-sm font-medium text-gray-700">
                     Description
                   </label>
-                  <textarea id="section-description" value={newSectionDescription} onChange={e => setNewSectionDescription(e.target.value)} rows={3} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"></textarea>
+                  <textarea id="section-description" value={newSectionDescription} onChange={e => setNewSectionDescription(e.target.value)} rows={3} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-700 focus:ring-blue-700 sm:text-sm"></textarea>
                 </div>
               </div>
               <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                <button type="button" onClick={handleSaveSection} className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-orange-500 text-base font-medium text-white hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">
+                <button type="button" onClick={handleSaveSection} className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-700 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 sm:ml-3 sm:w-auto sm:text-sm">
                   Enregistrer
                 </button>
-                <button type="button" onClick={handleCancelEditSection} className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                <button type="button" onClick={handleCancelEditSection} className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
                   Annuler
                 </button>
               </div>
@@ -213,19 +213,19 @@ export default function QuestionEditor() {
                   <input type="text" id="question-text" value={editingQuestionData.text} onChange={e => setEditingQuestionData({
                 ...editingQuestionData,
                 text: e.target.value
-              })} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" />
+              })} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-700 focus:ring-blue-700 sm:text-sm" />
                 </div>
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Options de réponse
                   </label>
                   {editingQuestionData.options.map((option, index) => <div key={index} className="flex items-center mb-2">
-                      <input type="text" value={option} onChange={e => handleChangeOption(index, e.target.value)} className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" />
-                      <button type="button" onClick={() => handleDeleteOption(index)} className="ml-2 text-red-600 hover:text-red-900">
+                      <input type="text" value={option} onChange={e => handleChangeOption(index, e.target.value)} className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-700 focus:ring-blue-700 sm:text-sm" />
+                      <button type="button" onClick={() => handleDeleteOption(index)} className="ml-2 text-green-600 hover:text-green-900">
                         <TrashIcon className="h-5 w-5" />
                       </button>
                     </div>)}
-                  <button type="button" onClick={handleAddOption} className="mt-2 inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-orange-100 hover:bg-orange-200">
+                  <button type="button" onClick={handleAddOption} className="mt-2 inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200">
                     <PlusIcon className="mr-1 h-4 w-4" />
                     Ajouter une option
                   </button>
@@ -234,7 +234,7 @@ export default function QuestionEditor() {
                   <input id="allow-multiple" type="checkbox" checked={editingQuestionData.allowMultiple} onChange={e => setEditingQuestionData({
                 ...editingQuestionData,
                 allowMultiple: e.target.checked
-              })} className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
+              })} className="h-4 w-4 text-blue-700 focus:ring-blue-700 border-gray-300 border-[1px] border-solid rounded" />
                   <label htmlFor="allow-multiple" className="ml-2 block text-sm text-gray-700">
                     Autoriser plusieurs réponses
                   </label>
@@ -243,17 +243,17 @@ export default function QuestionEditor() {
                   <input id="has-other" type="checkbox" checked={editingQuestionData.hasOther} onChange={e => setEditingQuestionData({
                 ...editingQuestionData,
                 hasOther: e.target.checked
-              })} className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
+              })} className="h-4 w-4 text-blue-700 focus:ring-blue-700 border-gray-300 border-[1px] border-solid rounded" />
                   <label htmlFor="has-other" className="ml-2 block text-sm text-gray-700">
                     Inclure un champ "Autre"
                   </label>
                 </div>
               </div>
               <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                <button type="button" onClick={handleSaveQuestion} className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-orange-500 text-base font-medium text-white hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">
+                <button type="button" onClick={handleSaveQuestion} className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-700 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 sm:ml-3 sm:w-auto sm:text-sm">
                   Enregistrer
                 </button>
-                <button type="button" onClick={handleCancelEditQuestion} className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                <button type="button" onClick={handleCancelEditQuestion} className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 border-solid shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
                   Annuler
                 </button>
               </div>
@@ -262,7 +262,7 @@ export default function QuestionEditor() {
         </div>}
       <div className="mt-8 space-y-6">
         {sections.length > 0 ? sections.map(section => <div key={section.id} className="bg-white shadow overflow-hidden sm:rounded-md">
-              <div className="px-4 py-5 border-b border-gray-200 sm:px-6 flex justify-between items-center cursor-pointer" onClick={() => toggleSection(section.id)}>
+              <div className="px-4 py-5 border-b border-gray-200 border-solid sm:px-6 flex justify-between items-center cursor-pointer" onClick={() => toggleSection(section.id)}>
                 <div>
                   <h3 className="text-lg leading-6 font-medium text-gray-900">
                     {section.title}
@@ -275,20 +275,20 @@ export default function QuestionEditor() {
                   {isSectionExpanded(section.id) ? <ChevronUpIcon className="h-5 w-5 text-gray-500" /> : <ChevronDownIcon className="h-5 w-5 text-gray-500" />}
                 </div>
               </div>
-              {isSectionExpanded(section.id) && <div className="border-t border-gray-200 px-4 py-5 sm:p-6">
+              {isSectionExpanded(section.id) && <div className="border-t border-gray-200 border-solid px-4 py-5 sm:p-6">
                   <div className="flex justify-between items-center mb-4">
                     <div className="flex space-x-2">
                       <button onClick={e => {
                 e.stopPropagation();
                 handleEditSection(section);
-              }} className="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-orange-100 hover:bg-orange-200">
+              }} className="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200">
                         <SaveIcon className="mr-1 h-4 w-4" />
                         Modifier la section
                       </button>
                       <button onClick={e => {
                 e.stopPropagation();
                 handleDeleteSection(section.id);
-              }} className="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-red-700 bg-yellow-900-100 hover:bg-yellow-900-200">
+              }} className="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-green-900-100 hover:bg-green-900-200">
                         <TrashIcon className="mr-1 h-4 w-4" />
                         Supprimer la section
                       </button>
@@ -318,10 +318,10 @@ export default function QuestionEditor() {
                               </div>
                             </div>
                             <div className="flex space-x-2">
-                              <button onClick={() => handleEditQuestion(section.id, question)} className="text-blue-600 hover:text-blue-900">
+                              <button onClick={() => handleEditQuestion(section.id, question)} className="text-blue-700 hover:text-blue-700">
                                 <SaveIcon className="h-5 w-5" />
                               </button>
-                              <button onClick={() => handleDeleteQuestion(section.id, question.id)} className="text-red-600 hover:text-red-900">
+                              <button onClick={() => handleDeleteQuestion(section.id, question.id)} className="text-green-600 hover:text-green-900">
                                 <TrashIcon className="h-5 w-5" />
                               </button>
                             </div>

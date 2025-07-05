@@ -73,7 +73,7 @@ export default function Survey() {
             <h1 className="text-2xl font-bold text-gray-900">
                Dirigeant, quel budget pour votre protection sociale et votre retraite.
             </h1>
-            <button onClick={handleLogout} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-yellow-900 hover:bg-yellow-900">
+            <button onClick={handleLogout} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-900 hover:bg-green-900">
               <LogOutIcon className="mr-2 h-4 w-4" />
               Déconnexion
             </button>
@@ -90,9 +90,9 @@ export default function Survey() {
             <p className="text-gray-600 mb-6">
               Merci d'avoir répondu à ce questionnaire. Vos réponses m’aideront à mieux comprendre les besoins de 
               couvertures dans votre secteur d’activité professionnelle. 
-              <p className=' text-yellow-600 border-l-4'>Richard EDIMO</p>  
+              <p className=' text-green-600 border-l-4'>Richard EDIMO</p>  
             </p>
-            <button onClick={handleLogout} className="w-full inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-500 hover:bg-yellow-700">
+            <button onClick={handleLogout} className="w-full inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-700 hover:bg-blue-700">
               Terminer
             </button>
           </div>
@@ -109,7 +109,7 @@ export default function Survey() {
             <span className="mr-4 text-sm text-gray-600">
               Bonjour, {currentUser.name}
             </span>
-            <button onClick={handleLogout} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-yellow-900 hover:bg-yellow-900">
+            <button onClick={handleLogout} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-900 hover:bg-green-900">
               <LogOutIcon className="mr-2 h-4 w-4" />
               Déconnexion
             </button>
@@ -125,7 +125,7 @@ export default function Survey() {
             </span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2.5">
-            <div className="bg-orange-500 h-2.5 rounded-full" style={{
+            <div className="bg-blue-700 h-2.5 rounded-full" style={{
             width: `${(currentSectionIndex + 1) / sections.length * 100}%`
           }}></div>
           </div>
@@ -136,10 +136,10 @@ export default function Survey() {
             <ChevronLeftIcon className="mr-2 h-4 w-4" />
             Précédent
           </button>
-          {isLastSection ? <button onClick={handleSubmit} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-yellow-700 hover:bg-green-700">
+          {isLastSection ? <button onClick={handleSubmit} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-700 hover:bg-green-700">
               <CheckCircleIcon className="mr-2 h-4 w-4" />
-              Terminer le sondage
-            </button> : <button onClick={handleNext} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-500 hover:bg-yellow-700">
+              Terminer le questionnaire
+            </button> : <button onClick={handleNext} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-700 hover:bg-blue-700">
               Suivant
               <ChevronRightIcon className="ml-2 h-4 w-4" />
             </button>}

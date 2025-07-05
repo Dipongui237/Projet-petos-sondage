@@ -83,7 +83,7 @@ export default function ResponsesView() {
             Consultez les réponses des participants au sondage.
           </p>
         </div>
-        <button onClick={exportResponsesToCSV} disabled={responses.length === 0} className={`inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm ${responses.length === 0 ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'text-white bg-orange-500 hover:bg-yellow-700'}`}>
+        <button onClick={exportResponsesToCSV} disabled={responses.length === 0} className={`inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm ${responses.length === 0 ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'text-white bg-blue-700 hover:bg-blue-700'}`}>
           <DownloadIcon className="mr-2 h-4 w-4" />
           Exporter CSV
         </button>

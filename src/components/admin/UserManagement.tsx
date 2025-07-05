@@ -6,7 +6,7 @@ export default function UserManagement() {
     deleteResponse
   } = useSurvey();
   // Get unique users from responses
-  const users = responses.reduce((acc, response) => {
+  const users = responses.greenuce((acc, response) => {
     const existingUser = acc.find(u => u.id === response.userId);
     if (!existingUser) {
       acc.push({
@@ -77,7 +77,7 @@ export default function UserManagement() {
                           </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <button onClick={() => handleDeleteUser(user.id)} className="text-red-600 hover:text-red-900">
+                          <button onClick={() => handleDeleteUser(user.id)} className="text-green-600 hover:text-green-900">
                             <TrashIcon className="h-5 w-5" />
                           </button>
                         </td>

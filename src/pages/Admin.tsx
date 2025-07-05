@@ -44,7 +44,7 @@ export default function Admin() {
               <XIcon className="h-6 w-6 text-white" />
             </button>
           </div>
-          <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto bg-yellow-900">
+          <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto bg-green-900">
             <div className="flex-shrink-0 flex items-center px-4">
               <h1 className="text-xl font-bold text-gray-900">
                 Admin Dashboard

@@ -55,20 +55,20 @@ function QuestionItem({
       </p>
       <div className="ml-6 space-y-2">
         {question.options.map(option => <div key={option} className="flex items-center">
-            <input type={question.allowMultiple ? 'checkbox' : 'radio'} id={`question-${question.id}-${option}`} name={`question-${question.id}`} checked={selectedOptions.includes(option)} onChange={() => handleCheckboxChange(option)} className={question.allowMultiple ? 'h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded' : 'h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300'} />
+            <input type={question.allowMultiple ? 'checkbox' : 'radio'} id={`question-${question.id}-${option}`} name={`question-${question.id}`} checked={selectedOptions.includes(option)} onChange={() => handleCheckboxChange(option)} className={question.allowMultiple ? 'h-4 w-4 text-blue-700 focus:ring-blue-700 border-gray-300 rounded' : 'h-4 w-4 text-blue-700 focus:ring-blue-700 border-gray-300'} />
             <label htmlFor={`question-${question.id}-${option}`} className="ml-3 block text-sm text-gray-700">
               {option}
             </label>
           </div>)}
         {question.hasOther && <div className="flex items-center">
-            <input type={question.allowMultiple ? 'checkbox' : 'radio'} id={`question-${question.id}-other`} name={`question-${question.id}`} checked={selectedOptions.includes('other')} onChange={() => handleCheckboxChange('other')} className={question.allowMultiple ? 'h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded' : 'h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300'} />
+            <input type={question.allowMultiple ? 'checkbox' : 'radio'} id={`question-${question.id}-other`} name={`question-${question.id}`} checked={selectedOptions.includes('other')} onChange={() => handleCheckboxChange('other')} className={question.allowMultiple ? 'h-4 w-4 text-blue-700 focus:ring-blue-700 border-gray-300 rounded' : 'h-4 w-4 text-blue-700 focus:ring-blue-700 border-gray-300'} />
             <label htmlFor={`question-${question.id}-other`} className="ml-3 flex items-center">
               <span className="text-sm text-gray-700 mr-2">Autre:</span>
               <input type="text" value={otherValue} onChange={handleOtherChange} onClick={() => {
             if (!selectedOptions.includes('other')) {
               handleCheckboxChange('other');
             }
-          }} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" />
+          }} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-700 focus:ring-blue-700 sm:text-sm" />
             </label>
           </div>}
       </div>

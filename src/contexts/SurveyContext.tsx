@@ -42,11 +42,11 @@ const SurveyContext = createContext<SurveyContextType | undefined>(undefined);
 const initialSections: Section[] = [{
   id: 1,
   title: "Informations générales",
-  description: "Veuillez nous indiquer votre situation actuelle concernant l'assurance",
+  description: "Veuillez nous indiquer votre situation actuelle concernant l'Proection sociale",
   questions: [{
     id: 1,
     text: '1- Quelle est votre profession ?',
-    options: ['Médecin', 'Kinésithérapeute', 'Sage-femme', 'Professionnel juridique (précisez : avocat, notaire, autre)'],
+    options: ['Médecin', 'Kinésithérapeute', 'Pharmacien', 'Professionnel juridique (précisez : avocat, notaire, autre)'],
     allowMultiple: false,
     hasOther: true
   }, {
